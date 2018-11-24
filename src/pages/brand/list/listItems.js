@@ -34,6 +34,8 @@ class ListItem extends Component{
             </Content>
         )
     }
+
+    
 }
 
 export default withRouter(ListItem)

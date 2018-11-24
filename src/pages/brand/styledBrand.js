@@ -1,7 +1,16 @@
 import styled from 'styled-components'
 import bg from 'images/bg.png'
 const BrandAll = styled.div`
-
+    height:100%;
+    width:100%;
+    svg:not(:root) {
+        overflow: hidden;
+        color: #000;
+    }
+    overflow:scroll;
+    .sc-kkGfuU{
+        overflow:hidden;
+    }
 `
 const Header = styled.div`
     width:100%;

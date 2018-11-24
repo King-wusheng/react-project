@@ -133,6 +133,7 @@ class HomeContainer extends Component {
                         <div>tab5</div>
                     </TabBar.Item>
                 </TabBar>
+                
             </div>
           );
     }

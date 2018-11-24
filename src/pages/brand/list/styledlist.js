@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 const Content = styled.div`
-
+    height:100%;
+    width:!00%;
 `
 const TopNav = styled.div`
     width:100%;

@@ -40,70 +40,72 @@ class Brand extends Component{
         return(
             <BrandAll>
                 <div>
-                    <NavBar
-                        mode="light"
-                        icon={<Icon type="left" onClick={()=>this.props.history.push('/home')} />}
-                        rightContent={
-                        <Popover mask
-                            overlayClassName="fortest"
-                            overlayStyle={{ color: 'currentColor' }}
-                            visible={this.state.visible}
-                            overlay={[
-                            (<Item key="4" value="首页"  data-seed="logId" >首页</Item>),
-                            (<Item key="5" value="我的收藏"  style={{ whiteSpace: 'nowrap' }}>我的收藏</Item>),
-                            (<Item key="6" value="我的订单">
-                                <span style={{ marginRight: 5 }}>我的订单</span>
-                            </Item>),
-                            ]}
-                            align={{
-                            overflow: { adjustY: 0, adjustX: 0 },
-                            offset: [-10, 0],
-                            }}
-                            onVisibleChange={this.handleVisibleChange}
-                            onSelect={this.onSelect}
-                        >
-                            <div style={{
-                            height: '100%',
-                            padding: '0 15px',
-                            marginRight: '-15px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            }}
-                            >
-                            <Icon type="ellipsis" />
-                            </div>
-                        </Popover>
-                        }
-                    >
-                        {data&&data.shop_name}
-                    </NavBar>
-                    </div>
-                <Header active={data&&!!data.coupon_data}>
                     <div>
+                        <NavBar
+                            mode="light"
+                            icon={<Icon type="left" onClick={()=>this.props.history.push('/home')} />}
+                            rightContent={
+                            <Popover mask
+                                overlayClassName="fortest"
+                                overlayStyle={{ color: 'currentColor' }}
+                                visible={this.state.visible}
+                                overlay={[
+                                (<Item key="4" value="首页"  data-seed="logId" >首页</Item>),
+                                (<Item key="5" value="我的收藏"  style={{ whiteSpace: 'nowrap' }}>我的收藏</Item>),
+                                (<Item key="6" value="我的订单">
+                                    <span style={{ marginRight: 5 }}>我的订单</span>
+                                </Item>),
+                                ]}
+                                align={{
+                                overflow: { adjustY: 0, adjustX: 0 },
+                                offset: [-10, 0],
+                                }}
+                                onVisibleChange={this.handleVisibleChange}
+                                onSelect={this.onSelect}
+                            >
+                                <div style={{
+                                height: '100%',
+                                padding: '0 15px',
+                                marginRight: '-15px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                }}
+                                >
+                                <Icon type="ellipsis" />
+                                </div>
+                            </Popover>
+                            }
+                        >
+                            {data&&data.shop_name}
+                        </NavBar>
+                        </div>
+                    <Header active={data&&!!data.coupon_data}>
                         <div>
                             <div>
-                                <img src={data&&data.logo_url} alt=""/>
+                                <div>
+                                    <img src={data&&data.logo_url} alt=""/>
+                                </div>
+                                <div>
+                                    <p>{data&&data.shop_name}</p>
+                                    <p>{data&&data.store_info}</p>
+                                </div>
+                                <img src={gz} alt=""/>
+                                
                             </div>
-                            <div>
-                                <p>{data&&data.shop_name}</p>
-                                <p>{data&&data.store_info}</p>
-                            </div>
-                            <img src={gz} alt=""/>
-                            
+                            {/* <div>
+                                <span>{data&&data.coupon_data&&data.coupon_data[0].title}</span>
+                                {data&&data.coupon_data&&data.coupon_data[0].content }
+                            </div> */}
+                            {/* <div>4444</div> */}
                         </div>
-                        {/* <div>
-                            <span>{data&&data.coupon_data&&data.coupon_data[0].title}</span>
-                            {data&&data.coupon_data&&data.coupon_data[0].content }
-                        </div> */}
-                        {/* <div>4444</div> */}
-                    </div>
-                </Header> 
-                <div>
-                    {
-                        this.type()
-                    }
-                   
-                </div>      
+                    </Header> 
+                    <div>
+                        {
+                            this.type()
+                        }
+                    </div>  
+                </div>
+                    
             </BrandAll>
         )
     }
@@ -124,6 +126,9 @@ class Brand extends Component{
         this.setState({
             message:this.data
         })
+    }
+    componentDidMount () {
+        // this.scroll = new BScroll(this.scrollId, {click: true})
     }
 }
 
