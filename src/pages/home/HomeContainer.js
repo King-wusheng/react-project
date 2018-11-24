@@ -10,18 +10,18 @@ import  myshow from 'images/myshow.png'
 import  classifyshow from 'images/classifyshow.png'
 
 import {HomeList} from 'pages/shouye'
-
+import ClassIfy from 'pages/classify'
 class HomeContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          selectedTab: 'hime',
+          selectedTab: 'home',
           fullScreen: true,
         };
     }
     render(){
         return (
-            <div style={this.state.fullScreen ? { position: 'fixed', height: '100%', width: '100%', top: 0 } : { height: 400 }}>
+            <div style={this.state.fullScreen ? { position: 'fixed', height: '100%', width: '100%', top: 0 ,background:'#fff'} : { height: 400 ,background:'#fff'}}>
                 <TabBar
                 unselectedTintColor="#666"
                 tintColor="#FF464E"
@@ -77,6 +77,7 @@ class HomeContainer extends Component {
                         }}
                         data-seed="logId1"
                     >
+                    <ClassIfy></ClassIfy>
                     </TabBar.Item>
                     
                     <TabBar.Item

@@ -38,7 +38,7 @@ export const GoodsMess = (dispatch) => {
         )
         .then(response => response.json())
         .then(result => {
-            dispatch(Goods(result))
+            dispatch(Goods&&Goods(result))
         })
         
     }

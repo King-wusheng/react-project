@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import HomeUi from './homeUi'
 import {Img} from '../actionCreator'
 import {GoodsMess,GoodsList} from '../actionCreator'
-
+import { withRouter } from 'react-router-dom'
 const mapState = (state)=>{
     return {
         data:state.shouye.data,
@@ -29,7 +29,7 @@ const mapImg =(dispatch)=>{
 class HomeContainer extends Component{
     render(){
         return (
-            <HomeUi {...this.props}></HomeUi>
+            <HomeUi  {...this.props}></HomeUi>
         )
     }
     //在此生命周期进行数据请求
@@ -38,5 +38,6 @@ class HomeContainer extends Component{
         this.props.goods()
         this.props.list()
     }
+    
 }
-export default connect(mapState,mapImg)(HomeContainer)
+export default withRouter(connect(mapState,mapImg)(HomeContainer))

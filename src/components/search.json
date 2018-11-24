@@ -1,0 +1,48 @@
+{
+	"def_keywords": "黑五狂欢购 最高满199减100",
+	"hot_keywords": [
+		{
+			"text": "羽绒服女",
+			"is_red": "1"
+		}
+	],
+	"jump_keywords": [
+		{
+			"text": "居家全场99减50上不封顶",
+			"jump_url": "https:\/\/mact.juanpi.com\/jjndhx",
+			"end_time": 1543197600
+		},
+		{
+			"text": "百雀羚 99减30上不封顶",
+			"jump_url": "qimi:\/\/juanpi?type=23&content= 5242294_ 5242294",
+			"end_time": 1543024800
+		},
+		{
+			"text": "黑五狂欢购 最高满199减100",
+			"jump_url": "https:\/\/mact.juanpi.com\/hwkhg2018",
+			"end_time": 1543284000
+		}
+	],
+	"hot_category": [
+		{
+			"text": "男装",
+			"jump_url": "https:\/\/m.juanpi.com\/cate\/index?cate=244"
+		},
+		{
+			"text": "鞋子",
+			"jump_url": "https:\/\/m.juanpi.com\/cate\/index?cate=2340"
+		},
+		{
+			"text": "内衣配饰",
+			"jump_url": "https:\/\/m.juanpi.com\/cate\/index?cate=39"
+		},
+		{
+			"text": "美妆",
+			"jump_url": "https:\/\/m.juanpi.com\/cate\/index?cate=40"
+		},
+		{
+			"text": "通讯旅游",
+			"jump_url": "https:\/\/m.juanpi.com\/cate\/index?cate=2310"
+		}
+	]
+}
