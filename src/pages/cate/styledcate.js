@@ -4,6 +4,10 @@ const CateALL = styled.div`
     width:100%;
     height:100%;
     overflow:scroll;
+    position:relative;
+    >div{
+        position:relative;
+    }
     svg:not(:root){
         color:#333
     }
@@ -31,9 +35,29 @@ const Content = styled.div`
     width:100%;
     overflow:hidden
 `
+const Filter = styled.div`
+   
+`
+const Fil = styled.div`
 
+`
+
+const Curtain = styled.div`
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:#333;
+    z-index:999;
+    opacity:.5;
+    display:${props=>props.active?'block':'none'};
+    left:0;
+    top:0;
+`
 export {
     CateALL,
     Nav,
-    Content
+    Content,
+    Filter,
+    Fil,
+    Curtain
 }

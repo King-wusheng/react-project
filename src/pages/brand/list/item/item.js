@@ -4,7 +4,7 @@ import {GoodList} from './styledItem'
 class Item extends Component{
     render(){
         return (
-            <GoodList active={this.props.value.corner}>
+            <GoodList active={this.props.value.corner} onClick={()=>this.props.history.push({pathname:'/details',state:{shop_id:this.props.value.goods_id}})}>
                 <div>
                     <img src={this.props.value.corner} alt=""/>
                     <img src={this.props.value.pic_url} alt=""/>

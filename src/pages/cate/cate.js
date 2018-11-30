@@ -1,18 +1,23 @@
 import React , {Component} from 'react'
 import { Popover, NavBar, Icon } from 'antd-mobile';
-import {CateALL,Nav,Content} from './styledcate'
-import Items from './item/item'
+import {CateALL,Nav,Content,Filter,Fil,Curtain} from './styledcate'
+import Items from 'components/common/item/item'
 import data from 'components/classify.json'
+import {withRouter} from 'react-router-dom'
+import FilterItem from './filter'
 const Item = Popover.Item;
 
 class Cate extends Component{
     constructor(){
         super()
+        this.bool=false
         this.state={
-            mess:[]
+            mess:[],
+            bool:false
         }
     }
     render(){
+        
         return(
             <CateALL>
                 <div>
@@ -26,7 +31,7 @@ class Cate extends Component{
                                 overlayStyle={{ color: 'currentColor' }}
                                 visible={this.state.visible}
                                 overlay={[
-                                (<Item key="4" value="首页"  data-seed="logId" >首页</Item>),
+                                (<Item key="4"  value="首页"  data-seed="logId" >首页</Item>),
                                 (<Item key="5" value="我的收藏"  style={{ whiteSpace: 'nowrap' }}>我的收藏</Item>),
                                 (<Item key="6" value="我的订单">
                                     <span style={{ marginRight: 5 }}>我的订单</span>
@@ -57,25 +62,38 @@ class Cate extends Component{
                         </NavBar>
                         
                     </div>
-                            
+                    
                     <Nav>
                         <div>推荐</div>
                         <div>价格</div>
                         <div>销量</div>
                         <div>上新</div>
-                        <div>筛选</div>
+                        <Fil onClick={this.filterGood.bind(this)}>筛选</Fil>
                     </Nav>  
                     <Content>
                         {
                             data.map(value=>{
-                                return <Items key={value.goods_id} value={value}></Items>
+                                return <Items  key={value.goods_id} value={value}></Items>
                             })
                         }
                     </Content>
+                    <Filter active={this.state.bool}>
+                        <FilterItem filterGood={this.filterGood.bind(this)} show={this.state.bool}></FilterItem>
+                    </Filter> 
+
+                    <Curtain active={this.state.bool}>
+
+                    </Curtain>
                 </div>
                     
             </CateALL>
         )
     }
+    filterGood(){
+        this.bool = !this.bool
+        this.setState({
+            bool:this.bool
+        })
+    }
 }
-export default Cate
+export default withRouter(Cate)

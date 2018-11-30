@@ -8,9 +8,12 @@ import  homeshow from 'images/homeshow.png'
 import  cartshow from 'images/cartshow.png'
 import  myshow from 'images/myshow.png'
 import  classifyshow from 'images/classifyshow.png'
-
+// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import {HomeList} from 'pages/shouye'
+import {Cart} from 'pages/cart'
+import {Profile} from 'pages/profile'
 import ClassIfy from 'pages/classify'
+
 class HomeContainer extends Component {
     constructor(props) {
         super(props);
@@ -44,9 +47,10 @@ class HomeContainer extends Component {
                         }
                         selected={this.state.selectedTab === 'home'}
                         onPress={() => {
-                        this.setState({
-                            selectedTab: 'home',
-                        });
+                            this.setState({
+                                selectedTab: 'home',
+                            });
+                            this.props.history.push('/home/shouye')
                         }}
                         data-seed="logId"
                     >
@@ -71,9 +75,10 @@ class HomeContainer extends Component {
                         key="classify"
                         selected={this.state.selectedTab === 'classify'}
                         onPress={() => {
-                        this.setState({
-                            selectedTab: 'classify',
-                        });
+                            this.setState({
+                                selectedTab: 'classify',
+                            });
+                            this.props.history.push('/home/classify')
                         }}
                         data-seed="logId1"
                     >
@@ -99,12 +104,13 @@ class HomeContainer extends Component {
                         key="cart"
                         selected={this.state.selectedTab === 'cart'}
                         onPress={() => {
-                        this.setState({
-                            selectedTab: 'cart',
-                        });
+                            this.setState({
+                                selectedTab: 'cart',
+                            });
+                            this.props.history.push('/home/cart')
                         }}
                     >
-                        <div>tab4</div>
+                        <Cart></Cart>
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
@@ -125,14 +131,16 @@ class HomeContainer extends Component {
                         key="profile"
                         selected={this.state.selectedTab === 'profile'}
                         onPress={() => {
-                        this.setState({
-                            selectedTab: 'profile',
-                        });
+                            this.setState({
+                                selectedTab: 'profile',
+                            });
+                            this.props.history.push('/home/profile')
                         }}
                     >
-                        <div>tab5</div>
+                        <Profile></Profile>
                     </TabBar.Item>
                 </TabBar>
+                
                 
             </div>
           );
